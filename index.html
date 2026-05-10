@@ -405,9 +405,6 @@
 
      
      
-     <h3 class="col-md-12 text-center laptop-only-header" id="title">
-     <span style="color: #e74c3c;">NEW!</span> <a href="#game-section" style="text-decoration: none;font-size: inherit;">Interactive Game</a> <span style="color: #2ecc71;">(Bottom of the Page)</span><br>
-     </h3>
      </div>
      </div>
 
@@ -500,11 +497,44 @@
       });
   </script>
 
+    <div class="row" id="viser-demo" style="margin-top: 20px; margin-bottom: 30px;">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="text-center" style="margin-bottom: 10px;">
+          <h2 style="margin: 0 0 4px 0; font-weight: 600; letter-spacing: -0.3px;">Interactive Demo</h2>
+          <p style="font-size: 14.5px; color: #4a5060; max-width: 760px; margin: 0 auto; line-height: 1.45;">
+            Drag the gizmo — the arm tracks via J-PARSE while the manipulability ellipsoid (red) and singular-direction arrows update live.
+          </p>
+        </div>
+
+        <div style="font-size: 13.5px; color: #2c3242; line-height: 1.55; padding: 8px 12px; background: #f6f8fb; border: 1px solid #e3e6eb; border-radius: 8px; display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: center;">
+          <span><b style="color: #1ec06b;">Gizmo</b> drag arrows / rings</span>
+          <span><b style="color: #1a3a8a;">Robot</b> xArm7 · Panda · I-YAM</span>
+          <span><b style="color: #b03030;">γ</b> singularity threshold</span>
+          <span><b style="color: #b03030;">Null-space</b> redundancy bias <i style="color:#6b7280;">(7-DoF only)</i></span>
+          <span><b style="color: #1a3a8a;">Reset / Clear</b> home · trace</span>
+          <span><b style="color: #1ec06b;">Live readouts</b>
+            <code style="background: #eef1f6; padding: 1px 5px; border-radius: 3px;">w = √det(JJ<sup>T</sup>)</code>,
+            <code style="background: #eef1f6; padding: 1px 5px; border-radius: 3px;">σ<sub>min</sub>⁄σ<sub>max</sub></code>
+          </span>
+        </div>
+
+        <!-- Local viser server.  Run from ~/Desktop/jparse-viser-space:
+               python app.py
+             The iframe then connects to http://127.0.0.1:7860. -->
+        <iframe
+          src="http://127.0.0.1:7860/?initialCameraPosition=1.00,0.70,0.70&initialCameraLookAt=0.20,0.00,0.30&initialCameraUp=0,0,1"
+          style="width: 100%; height: 640px; border: 1px solid #d8dde5; border-radius: 12px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06); background: #ffffff; margin-top: 18px;"
+          loading="lazy"
+          title="J-PARSE interactive demo">
+        </iframe>
+      </div>
+    </div>
+
     <div class="container">
       <div class="video-container">
-        <iframe 
+        <iframe
           src="https://www.youtube.com/embed/ZMrNGQht9eg"
-          title="YouTube video player" 
+          title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
@@ -888,29 +918,6 @@
                 }
               });
             </script>
-
-            <div class="row game-section">
-              <div class="col-sm-10 col-sm-offset-1 text-center">
-                <h1><b>Interactive Game </b></h1>
-                <h4>Check out our interactive game! Drag the the pink dot to control the target pose of the robot. Using J-PARSE, the three-link manipulator will be able to enter and exit the singularity!
-                
-                  <b>Note that the browser will ask to "save changes" when you reload the page -- feel free to ignore this and reload.</b></h4>
-                
-
-              </div>
-              <div id="game-section">
-              <iframe src="https://hao12450.github.io/hao124500.github.io/" width="100%" height="600px" frameborder="0"
-                title="Embedded Content" loading="lazy"
-                >
-
-              
-            </div>
-            <br>
-            <br>
-
-
-            </iframe>
-          </div>
 
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
